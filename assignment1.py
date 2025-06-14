@@ -1,7 +1,7 @@
 """
-Name:
-Date started:
-GitHub URL:
+Name: Huang Xu
+Date started: 06/14/2025
+GitHub URL: https://github.com/cp1404-students/a1-movies-xu90-h.git
 """
 
 
