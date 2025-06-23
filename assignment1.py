@@ -39,6 +39,23 @@ def main():
         else:
             print("Invalid menu choice")
 
+def load_movies(filename):
+    """Load movies from CSV file into list of lists."""
+    movies = []
+    with open(filename, 'r') as in_file:
+        for line in in_file:
+            parts = line.strip().split(',')
+            title = parts[0]
+            year = int(parts[1])
+            category = parts[2]
+            status = parts[3]
+            movies.append([title, year, category, status])
+    return movies
+
+def save_movies(filename, movies):
+    with open(filename, 'w') as out_file:
+        for movie in movies:
+            print(f"{movie[0]},{movie[1]},{movie[2]},{movie[3]}", file=out_file)
 
 
 if __name__ == '__main__':
