@@ -57,6 +57,24 @@ def save_movies(filename, movies):
         for movie in movies:
             print(f"{movie[0]},{movie[1]},{movie[2]},{movie[3]}", file=out_file)
 
+def display_movies(movies):
+    """Display all movies sorted by year and title."""
+    sorted_movies = sorted(movies, key=lambda m: (m[1], m[0]))
+    to_watch = 0
+    watched = 0
+
+    for i in range(len(sorted_movies)):
+        movie = sorted_movies[i]
+        mark = "*" if movie[3] == STATUS_UNWATCHED else " "
+        print(f"{i:2}. {mark} {movie[0]:35} - {movie[1]:4} ({movie[2]})")
+        if movie[3] == STATUS_UNWATCHED:
+            to_watch += 1
+        else:
+            watched += 1
+
+    print(f"{watched} movies watched. {to_watch} movies still to watch.")
+
+
 
 if __name__ == '__main__':
     main()
