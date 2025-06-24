@@ -118,7 +118,25 @@ def watch_movie(movies):
         except ValueError:
             print("Invalid input; enter a valid number")
 
+def input_non_blank(prompt):
+    """Get non-empty user input with validation."""
+    while True:
+        value = input(prompt).strip()
+        if value:
+            return value
+        print("Input can not be blank")
 
+
+def input_positive_integer(prompt):
+    """Get positive integer input with validation."""
+    while True:
+        try:
+            value = int(input(prompt))
+            if value >= 1:
+                return value
+            print("Number must be >= 1")
+        except ValueError:
+            print("Invalid input; enter a valid number")
 
 
 if __name__ == '__main__':
