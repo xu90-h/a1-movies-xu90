@@ -89,6 +89,35 @@ def add_movie(movies):
     movies.append([title, year, category, STATUS_UNWATCHED])
     print(f"\n{title} ({category} from {year}) added to movie list")
 
+def watch_movie(movies):
+    """Mark a movie as watched by list number."""
+    unwatched_movies = [m for m in movies if m[3] == STATUS_UNWATCHED]
+    if not unwatched_movies:
+        print("No more movies to watch!")
+        return
+
+    print("Enter the movie number to mark watched.")
+
+    sorted_movies = sorted(movies, key=lambda m: (m[1], m[0]))
+
+    while True:
+        try:
+            choice = int(input(">>> "))
+            if choice < 1:
+                print("Number must be >= 1")
+            elif choice > len(sorted_movies):
+                print("Invalid movie number.")
+            else:
+                selected = sorted_movies[choice - 1]
+                if selected[3] == STATUS_WATCHED:
+                    print(f"{selected[0]} ({selected[1]}) watched.")
+                else:
+                    selected[3] = STATUS_WATCHED
+                    print(f"{selected[0]} ({selected[1]}) watched.")
+                break
+        except ValueError:
+            print("Invalid input; enter a valid number")
+
 
 
 
