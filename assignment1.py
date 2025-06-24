@@ -74,6 +74,22 @@ def display_movies(movies):
 
     print(f"{watched} movies watched. {to_watch} movies still to watch.")
 
+def add_movie(movies):
+    """Add new movie."""
+    title = input_non_blank("Title: ")
+    year = input_positive_integer("Year: ")
+    print("Categories available: Action, Comedy, Documentary, Drama, Thriller, Other")
+    category = input_non_blank("Category: ").title()
+
+    # Validate category
+    if category not in VALID_CATEGORIES:
+        print(f"Invalid category; {category}")
+
+    # Add movie with unwatched
+    movies.append([title, year, category, STATUS_UNWATCHED])
+    print(f"\n{title} ({category} from {year}) added to movie list")
+
+
 
 
 if __name__ == '__main__':
