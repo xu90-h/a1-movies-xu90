@@ -3,7 +3,7 @@
 
 Assignment 1 for CP1404, IT@JCU
 
-By: _Your Name_
+By: _Huang Xu_
 
 This repo contains starter files:  
 
@@ -18,8 +18,8 @@ the `answer...` parts).
 
 1. How long did the entire project (assignment 1) take you?
 
-    answer...
+    About ten or so hours. But I spent a week on this assignment.
 
 2. What do you plan to do differently in your development process for assignment 2?
 
-    answer...
+    I will finish it earlier than this time.
